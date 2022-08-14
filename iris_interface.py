@@ -1,24 +1,29 @@
-from flask import Flask, jsonify,redirect,request
+from flask import Flask, jsonify,redirect,request,render_template
 from predict import predict_class
 
 app = Flask(__name__)
 
+# @app.route('/')
+# def hello_flask():
+#     print('*'*90)
+#     print("We are testing Flask")
+#     print('*'*90)
+#     return jsonify({"Message" : "Welcome to Flask"})
+
+# @app.route('/test')
+# def test():
+#     '''
+#     ---- TEST API ----
+#     This is Testing API 
+#     '''
+
+#     print("This is Testing API")
+#     return jsonify({"Message" : "Test API Successful"})
+
+################ Root API ########################################
 @app.route('/')
-def hello_flask():
-    print('*'*90)
-    print("We are testing Flask")
-    print('*'*90)
-    return jsonify({"Message" : "Welcome to Flask"})
-
-@app.route('/test')
-def test():
-    '''
-    ---- TEST API ----
-    This is Testing API 
-    '''
-
-    print("This is Testing API")
-    return jsonify({"Message" : "Test API Successful"})
+def man():
+    return render_template('home.html')
 
 ############################################################################
 ######################## Addition API ######################################
